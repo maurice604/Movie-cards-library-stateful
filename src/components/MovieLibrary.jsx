@@ -9,20 +9,27 @@ import MovieList from './MovieList';
 class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
+
     const { movies } = this.props;
+
     this.state = {
+      searchText: '',
+      bookmarkedOnly: false,
+      selectedGenre: '',
       movies: [...movies],
-      /* searchText: '',
-      bookmarkedOnly: 'false',
-      selectedGenre: '', */
     };
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, searchText, bookmarkedOnly, selectedGenre } = this.state;
+
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          searchText={ searchText }
+          bookmarkedOnly={ bookmarkedOnly }
+          selectedGenre={ selectedGenre }
+        />
         <AddMovie />
         <MovieList movies={ movies } />
       </div>

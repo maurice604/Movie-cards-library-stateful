@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     const { searchText,
       onSearchTextChange,
       bookmarkedOnly,
-      onBookmarkedChange,
+      onBookMarkedChange,
       selectedGenre,
       onSelectedGenreChange } = this.props;
     return (
@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
           <input
             type="checkbox"
             checked={ bookmarkedOnly }
-            onChange={ onBookmarkedChange }
+            onChange={ onBookMarkedChange }
             data-testid="checkbox-input"
             name="bookmarkedOnly"
           />
@@ -55,7 +55,7 @@ SearchBar.propTypes = {
   searchText: PropTypes.string.isRequired,
   onSearchTextChange: PropTypes.func.isRequired,
   bookmarkedOnly: PropTypes.bool.isRequired,
-  onBookmarkedChange: PropTypes.func.isRequired,
+  onBookMarkedChange: PropTypes.func.isRequired,
   selectedGenre: PropTypes.string.isRequired,
   onSelectedGenreChange: PropTypes.func.isRequired,
 };

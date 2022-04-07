@@ -18,9 +18,17 @@ class AddMovie extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleChange(event) {
+  /* handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
+    });
+  } */
+
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({
+      [name]: value,
     });
   }
 
